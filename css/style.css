@@ -15,14 +15,11 @@
 #ticker {
   padding-top: 15px;
   margin-left: 600px;
+  height: 60px;
 }
 
 #dancefloor {
-  font-size: 50px;
-  margin-left: 250px;
-  margin-top: 325px;
-}
-
-#music {
-  margin-left: 42%;
+  font-size: 48px;
+  margin-left: 220px;
+  margin-top: 330px;
 }

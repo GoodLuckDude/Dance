@@ -4,18 +4,30 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body id='body' onclick="start()">
 	<div id = 'scene'>
 		<div id = 'ticker'>
 			<span style="font-size: 50px" id = 'currentGem'></span>
-			<span id = 'showcase'>Подготовка</span>
+			<span id = 'showcase'>Нажми на сцену, чтобы начать представление</span>
 		</div>
 		<pre id = 'dancefloor'></pre>
 		<script src="dance.js"></script>
 		<script src="dancefloor.js"></script>
-		<script src="engine.js"></script>
-	</div>
-	<div id = "music">
-		<audio autoplay = "true" src="music/8-Bit Universe - Back in Black.wav"></audio>
+		<audio id="audio"></audio>
 	</div>
 </body>
+
+<script>
+	const audio = document.getElementById('audio');
+	audio.src = "music/8BitUniverseBackInBlack.wav";
+	audio.load();
+
+	function start() {
+		document.getElementById('showcase').textContent = '';
+		audio.play();
+		var script = document.createElement('script');
+		script.src = 'engine.js';
+		document.getElementsByTagName('head')[0].appendChild(script);
+		document.getElementById('body').onclick = null;
+	}
+</script>
